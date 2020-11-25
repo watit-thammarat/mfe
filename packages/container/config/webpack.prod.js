@@ -6,6 +6,9 @@ const packageJson = require('../package.json');
 
 const domain = process.env.PRODUCTION_DOMAIN;
 
+const marketingUrl = `marketing@${domain}/marketing/latest/remoteEntry.js`;
+console.log(marketingUrl);
+
 const prodConfig = {
   mode: 'production',
   output: {
