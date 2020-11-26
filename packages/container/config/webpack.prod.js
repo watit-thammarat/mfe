@@ -6,9 +6,6 @@ const packageJson = require('../package.json');
 
 const domain = process.env.PRODUCTION_DOMAIN;
 
-const marketingUrl = `marketing@${domain}/marketing/latest/remoteEntry.js`;
-console.log(marketingUrl);
-
 const prodConfig = {
   mode: 'production',
   output: {
@@ -20,7 +17,7 @@ const prodConfig = {
       name: 'container',
       remotes: {
         marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`,
-        // marketing: `marketing@https://d25lfbasv6trhz.cloudfront.net/marketing/latest/remoteEntry.js`,
+        auth: `auth@${domain}/auth/latest/remoteEntry.js`,
       },
       shared: packageJson.dependencies,
     }),
